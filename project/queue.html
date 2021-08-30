@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+      <!--상단 메뉴바-->
+      <style>
+        ul {
+        background-color: #7dc5df;
+        list-style-type: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    li { display:inline;}
+    li a {
+        display: inline-block;
+        background-color: #7dc5df;
+        color: #000000;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left:40px;
+        padding-right:40px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+    }
+        li a.current {				/*현재 메뉴 위치표시*/
+            border-top-left-radius: 10%;
+            border-top-right-radius: 10%;
+            background-color: white;
+            color: black;
+        }
+        li a:hover:not(.current) {		
+            border-top-left-radius: 10%;
+            border-top-right-radius: 10%;						
+            background-color: #39a3c0;
+            color: white;
+        }
+    </style>
+        <!-- 퀴즈 출력 페이지 -->
+        <style type="text/css">
+        .quiz{
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            top: 5%;
+            bottom:15%;
+
+            background: #FFFFFF;
+            border: 2px;
+            box-sizing: border-box;
+            }
+        </style>
+       <!--정답 버튼-->
+       <style>
+        a { text-decoration:none } /*하이퍼링크 밑줄 제거*/
+      .popan{
+          position: absolute;
+          width: 123px;
+          height: 69px;
+          right: 10%;
+          bottom: 5%;
+          font-size: large;
+
+          background: #69b6cf;
+          border: 1px solid white;
+            border-radius: 10px;
+          box-sizing: border-box;
+      }
+      .popan:hover {
+      background: #39a3c0;
+       }
+       
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 900;
+    }
+    
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .popup {
+      position: fixed;
+      width: 60%;
+      padding: 10px;
+      max-width: 500px;
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, .9);
+      /* "delay" the visibility transition */
+      -webkit-transition: opacity .5s, visibility 0s linear .5s;
+      transition: opacity .5s, visibility 0s linear .5s;
+      z-index: 1;
+    }
+    
+    .popup:target {
+      visibility: visible;
+      opacity: 1;
+      /* cancel visibility transition delay */
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+    }
+    
+    .popup-close {
+      position: absolute;
+      padding: 10px;
+      max-width: 500px;
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, .9);
+    }
+    
+    .popup .close {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      padding: 5px;
+      color: #000;
+      transition: color .3s;
+      font-size: 2em;
+      line-height: .6em;
+      font-weight: bold;
+    }
+    
+    .popup .close:hover {
+      color: #00E5EE;
+    }
+  </style>
+        <!--정답 확인버튼-->
+        <style>
+        a { text-decoration:none }/*하이퍼링크 밑줄 제거*/
+            .anpage{
+            position: absolute;
+            width: 123px;
+            height: 69px;
+            right: 20%;
+            bottom: 5%;
+            font-size: large;
+
+            background: #69b6cf;
+            border: 1px solid white;
+            border-radius: 10px;
+            box-sizing: border-box;
+            }
+            .anpage:hover {
+        background: #39a3c0;
+         }
+        </style>
+       
+    </head>
+    <body style="background-color:#c4dbe9;">
+        <!--수직 내비게이션 바-->
+	    <ul>
+        <li><a href="start.html">홈으로 돌아가기</a></li> 
+        <li><a href="heap.html">힙</a></li>  
+        <li><a  href="tree.html">트리</a></li> 
+        <li><a href="stack.html">스택</a></li>  
+        <li><a  href="list.html">리스트</a></li><!-- 현재 메뉴 위치표시 -->
+        <li><a href="graph.html">연결 그래프</a></li>
+        <li><a class="current" href="queue.html">큐</a></li>
+        </ul>
+    
+        <!--페이지 넘기기 버튼-->
+        <a href = "lastquiz.html">
+            <div class="nextbutton">
+            </div>
+        </a>
+          <!--퀴즈 문제 출력-->
+        <div class="quiz">
+            퀴즈 문제 출력
+            <input type="radio" name="fruit" value="사과" /> 1번
+            <input type="radio" name="fruit" value="바나나" checked="checked" /> 2번
+        </div>
+         <!--정답 버튼-->
+         <div class="popan">
+            <p style="text-align: center";>
+                <a href="#pop01" style="color:white">정답</a>
+            </p>
+        </div>
+          
+          <div id="pop01" class="overlay">
+            <div class="popup">
+              <a href="#none" class="close">&times;</a>
+              대충 여기에 정답이 들어감
+            </div>
+          </div>
+        <!--정답 확인 버튼-->
+
+        <div class="anpage", onclick="location.href='answerpage.html';">
+            <span style="color:white">
+               <p style="text-align: center";>
+                정답확인
+                </p>
+            </span>
+            </div>
+
+    </body>
+</html>
