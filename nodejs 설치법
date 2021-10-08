@@ -1,0 +1,7 @@
+기본적으로 노드js 설치하시고
+app.js가 있는 폴더에로 디렉토리 이동 후, 
+#npm init
+#npm install express --save
+순으로 입력하신 뒤, 
+
+콘솔창에 node app.js 입력하시면 서버가 실행됩니다. 그리고 주소창에 https://localhost:3000 입력하시면 됩니다. 
