@@ -3,21 +3,31 @@
 
 <head>
   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width">
 
-    <title>DAST</title>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="app.css">
+  <title>DAST</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="app.css">
 
   <!--시작 페이지-->
 
   <!--상단 메뉴바-->
   <style>
-    a { text-decoration:none }
+    a {
+      text-decoration: none
+    }
+
     ul {
       background-color: #7dc5df;
       list-style-type: none;
@@ -25,36 +35,46 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      }
-    li { display:inline;}
+    }
+
+    li {
+      display: inline;
+    }
+
     li a {
       display: inline-block;
       background-color: #7dc5df;
       color: #000000;
       padding-top: 8px;
       padding-bottom: 8px;
-      padding-left:40px;
-      padding-right:40px;
+      padding-left: 40px;
+      padding-right: 40px;
       text-decoration: none;
       text-align: center;
       font-weight: bold;
     }
-    li a.current {				/*현재 메뉴 위치표시*/
-        border-top-left-radius: 10%;
-        border-top-right-radius: 10%;
-        background-color: #c4dbe9;
-        color: black;
+
+    li a.current {
+      /*현재 메뉴 위치표시*/
+      border-top-left-radius: 10%;
+      border-top-right-radius: 10%;
+      background-color: #c4dbe9;
+      color: black;
     }
-    li a:hover:not(.current) {		
-        border-top-left-radius: 10%;
-        border-top-right-radius: 10%;						
-        background-color: #39a3c0;
-        color: white;
+
+    li a:hover:not(.current) {
+      border-top-left-radius: 10%;
+      border-top-right-radius: 10%;
+      background-color: #39a3c0;
+      color: white;
     }
-</style>
+  </style>
   <!-- 설명 페이지 -->
   <style>
-    a { text-decoration:none } 
+    a {
+      text-decoration: none
+    }
+
     .information {
       position: relative;
       z-index: 40;
@@ -68,7 +88,10 @@
 
   <!--퀴즈 버튼-->
   <style>
-    a { text-decoration:none } 
+    a {
+      text-decoration: none
+    }
+
     .quizbutton {
       position: absolute;
       width: 246px;
@@ -107,7 +130,7 @@
       height: 700px;
       right: 3%;
       left: calc(50% - 700px/2 + 450px);
-      
+
       top: 154px;
 
       background: #D7E7FF;
@@ -115,21 +138,21 @@
       box-sizing: border-box;
     }
   </style>
-  
+
 </head>
 
 
 <body style="background-color:#c4dbe9;">
-   <!--수평 내비게이션 바-->
-   
-   <ul>
-    <li><a href="select_heap.html">힙</a></li> 
-    <li><a href="select_tree.html">트리</a></li> 
-    <li><a href="select_stack.html">스택</a></li>  
+  <!--수평 내비게이션 바-->
+
+  <ul>
+    <li><a href="select_heap.html">힙</a></li>
+    <li><a href="select_tree.html">트리</a></li>
+    <li><a href="select_stack.html">스택</a></li>
     <li><a href="select_linked_list.html">연결리스트</a></li>
     <li><a class="current" href="select_graph.html">그래프</a></li><!-- 현재 메뉴 위치표시 -->
     <li><a href="select_queue.html">큐</a></li>
-</ul>
+  </ul>
   <!-- 설명 페이지 -->
   <div class="information" style="margin-bottom: 5%; margin-top:1em;">
     <a href=#none id="show" onclick="if(hide.style.display=='none')
@@ -137,9 +160,11 @@
         else {hide.style.display='none';show.innerText='▶펼치기(설명보기)'}">▶설명보기</a>
     <div id="hide" style="display: none;">
       <div id="explain" style="margin:1%;">
-        <p>트리 구조란 그래프의 일종으로, 여러 노드가 한 노드를 가리킬 수 없는 구조이다. 간단하게는 회로가 없고, 서로 다른 두 노드를 잇는 길이 하나뿐인 그래프를 트리라고 부른다.
-          트리에서 최상위 노드를 루트 노드라고 한다. 또한 노드 A가 노드 B를 가리킬 때 A를 B의 부모 노드, B를 A의 자식 노드라고 한다. 자식 노드가 없는 노드를 잎 노드라고 한다. 잎 노드가 아닌
-          노드를 내부 노드라고 한다.
+        <p>
+          그래프는 정점(Vertex)과 간선(edge)으로 이뤄진 비선형 자료구조를 의미합니다.
+          트리와는 다르게 그래프는 정점마다 간선이 있거나 없거나에 따른 루트 노드, 부모와 자식이라는 개념이 존재하지 않으며,
+          그래프는 노드와 엣지로 구성되어 있으며 객체 간의 관계를 표현할 수 있는 자료구조로 네트워크 모델이며
+          실생활에서 다양한 예를 표현할 수 있다. 지하철 노선도, 도로, 네비게이션의 최단경로 등 실생활에 활용할 수 있는 방법이 많습니다.
         </p>
       </div>
       <div>
@@ -156,97 +181,59 @@
     </div>
   </div>
   <!-- 코드 출력 창 -->
+
+
+  <!-- https://nyang-in.tistory.com/231 - 무방향그래프 -->
+
   <div class="code">
     <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em ;padding:.2em;">
       <span style="color: #008800; font-weight: bold">class</span>
       <pre>
-<span style="color: #008800; font-weight: bold">class</span> Node {
-constructor(data, left <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span>, right <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span>) {
-    <span style="color: #008800; font-weight: bold">this</span>.data <span style="color: #333333">=</span> data;
-    <span style="color: #008800; font-weight: bold">this</span>.left <span style="color: #333333">=</span> left;
-    <span style="color: #008800; font-weight: bold">this</span>.right <span style="color: #333333">=</span> right;
-  }
-}
+    <span style="color: #008800; font-weight: bold">class</span> FFFFF {
+     constructor() {
+       <span style="color: #008800; font-weight: bold">this</span>.edges <span style="color: #333333">=</span> {}; 
+     }
 
-<span style="color: #008800; font-weight: bold">class</span> BST {
-constructor() {
-  <span style="color: #008800; font-weight: bold">this</span>.root <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span>;
-}
+  //정점 추가하기
+  addVertex(Vertex) {
+    <span style="color: #008800; font-weight: bold">this</span>.edges <span style="color: #333333">[vertex] = {}; </span> 
 
-add(data) {
-  <span style="color: #008800; font-weight: bold">const</span> node <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.root;
-  <span style="color: #008800; font-weight: bold">if</span> (node <span style="color: #333333">===</span> <span style="color: #008800; font-weight: bold">null</span>) {
-    <span style="color: #008800; font-weight: bold">this</span>.root <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Node(data);
-    <span style="color: #008800; font-weight: bold">return</span>;
-  } <span style="color: #008800; font-weight: bold">else</span> {
-    <span style="color: #008800; font-weight: bold">const</span> searchTree <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span> (node) {
-      <span style="color: #008800; font-weight: bold">if</span> (data <span style="color: #333333">&lt;</span> node.data) {
-        <span style="color: #008800; font-weight: bold">if</span> (node.left <span style="color: #333333">===</span> <span style="color: #008800; font-weight: bold">null</span>) {
-          node.left <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Node(data);
-          <span style="color: #008800; font-weight: bold">return</span>;
-        } <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (node.left <span style="color: #333333">!==</span> <span style="color: #008800; font-weight: bold">null</span>) {
-          <span style="color: #888888">//left에 함수 있을 시 재귀 함수 적용</span>
-          <span style="color: #008800; font-weight: bold">return</span> searchTree(node.left);
-        }
-      } <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (data <span style="color: #333333">&gt;</span> node.data) {
-        <span style="color: #008800; font-weight: bold">if</span> (node.right <span style="color: #333333">===</span> <span style="color: #008800; font-weight: bold">null</span>) {
-          node.right <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Node(data);
-          <span style="color: #008800; font-weight: bold">return</span>;
-        } <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (node.right <span style="color: #333333">!==</span> <span style="color: #008800; font-weight: bold">null</span>) {
-          <span style="color: #008800; font-weight: bold">return</span> searchTree(node.right);
-        }
-      } <span style="color: #008800; font-weight: bold">else</span> {
-        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span>;
+  // 간선 추가하기
+  addEdge(vertex1, vertex2, weight){
+    <span style="color: #008800; font-weight: bold">if</span> (weight === <span style="color: #008800; font-weight: bold">underfined</span>) {
+        <span style="color: #008800; font-weight: bold">weight</span> = 0;
       }
-    };
-    <span style="color: #008800; font-weight: bold">return</span> searchTree(node);
+      <span style="color: #008800; font-weight: bold">this</span>.edges[vertex1][vertex2] = weight;
+      <span style="color: #008800; font-weight: bold">this</span>.edges[vertex2][vertex1] = weight;
   }
-}
 
-remove(data) {
-  <span style="color: #888888">//제거할 data의 파라미터를 두번째에 놓았다.</span>
-  <span style="color: #008800; font-weight: bold">const</span> removeNode <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span> (node, data) {
-    <span style="color: #008800; font-weight: bold">if</span> (node <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span>) {
-      <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span>;
+  // 간선 삭제하기
+  removeEdge(vertex1, vertex2) {
+    if (<span style="color: #008800; font-weight: bold">this</span>.edges[vertex1] && <span style="color: #008800; font-weight: bold">this</span>.edges[vertex1][vertex2] !== <span style="color: #008800; font-weight: bold">undefined</span>) {
+      <span style="color: #008800; font-weight: bold">delete</span> <span style="color: #008800; font-weight: bold">this</span>.edges[vertex1][vertex2];
     }
-    <span style="color: #008800; font-weight: bold">if</span> (data <span style="color: #333333">==</span> node.data) {
-      <span style="color: #888888">// node has no children ~ 밑에 뿌리가 없는 노드</span>
-      <span style="color: #008800; font-weight: bold">if</span> (node.left <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> node.right <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span>) {
-        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span>;
-      }
-      <span style="color: #888888">// node has no left child  ~ left는 없는 경우 node right가 해당 삭제 데이터에 들어간다.</span>
-      <span style="color: #008800; font-weight: bold">if</span> (node.left <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span>) {
-        <span style="color: #008800; font-weight: bold">return</span> node.right;
-      }
-      <span style="color: #888888">// node has no right child </span>
-      <span style="color: #008800; font-weight: bold">if</span> (node.right <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span>) {
-        <span style="color: #008800; font-weight: bold">return</span> node.left;
-      }
-      <span style="color: #888888">// node has two children</span>
-      <span style="color: #008800; font-weight: bold">var</span> tempNode <span style="color: #333333">=</span> node.right;
-      <span style="color: #888888">//tempNode는 삭제할 node의 right가 되고</span>
-      <span style="color: #008800; font-weight: bold">while</span> (tempNode.left <span style="color: #333333">!==</span> <span style="color: #008800; font-weight: bold">null</span>) {
-        tempNode <span style="color: #333333">=</span> tempNode.left; <span style="color: #888888">//다시 node right의 left가 된다.</span>
-      }
-      node.data <span style="color: #333333">=</span> tempNode.data; <span style="color: #888888">//그리고 삭제 node에는 위의 tempnode가 들어가게된다.</span>
-      node.right <span style="color: #333333">=</span> removeNode(node.right, tempNode.data);
-      <span style="color: #008800; font-weight: bold">return</span> node;
-    } <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (data <span style="color: #333333">&lt;</span> node.data) {
-      node.left <span style="color: #333333">=</span> removeNode(node.left, data);
-      <span style="color: #008800; font-weight: bold">return</span> node;
-    } <span style="color: #008800; font-weight: bold">else</span> {
-      node.right <span style="color: #333333">=</span> removeNode(node.right, data);
-      <span style="color: #008800; font-weight: bold">return</span> node;
+    if (<span style="color: #008800; font-weight: bold">this</span>.edges[vertex2] && <span style="color: #008800; font-weight: bold">this</span>.edges[vertex2][vertex1] !== <span style="color: #008800; font-weight: bold">undefined</span>) {
+      <span style="color: #008800; font-weight: bold">delete</span> <span style="color: #008800; font-weight: bold">this</span>.edges[vertex2][vertex1];
     }
   }
-  <span style="color: #008800; font-weight: bold">this</span>.root <span style="color: #333333">=</span> removeNode(<span style="color: #008800; font-weight: bold">this</span>.root, data);
+
+  // 정점 삭제하기
+  removeVertex(vertex) {
+    <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #008800; font-weight: bold">let</span> adjacentVertex <span style="color: #008800; font-weight: bold">in this</span>.edges[vertex]) {
+      this.removeEdge(adjacentVertex, vertex);
+    }
+    <span style="color: #008800; font-weight: bold">delete this</span>.edges[vertex];
+  }
+
 }
-}
+  
+
+
   </pre>
     </div>
 
   </div>
-      <div class="col-2"></div>
+  <div class="col-2"></div>
 </body>
 <script src="app.js"></script>
 
