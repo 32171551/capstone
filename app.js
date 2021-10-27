@@ -1,6 +1,9 @@
 const express = require("express");
 const server = express();
+const http = require('http');
 
+//server.use('/js', express.static(__dirname + "/js"));
+//server.use('/css', express.static(__dirname + "/css"));
 server.use(express.static(__dirname + "/public"));
 
 server.get("/", (req, res) => {
